@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script>
+    function printMousePos(event) {
+    var colortoCompare = "rgb(236, 236, 244)";
+    let elem = document.querySelector('div');
+    let rect = elem.getBoundingClientRect();
+    for (var key in rect) {
+        if(document.getElementById('test').style.backgroundColor === colortoCompare){
+        let para = document.createElement('p');
+        para.textContent  = `${ key } : ${ rect[key] }`;
+        var print = para.textContent.split();
+        console.log(print);
+    }
+}
+
+        console.log("client: " + event.clientX + ", " +
+        event.clientY);
+        console.log("page: " + event.pageX +
+        ", " + event.pageY);
+    }
+    
+    document.addEventListener("click", printMousePos);</script>
+</head>
+    <body style="margin: 0px">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div style="background-color: #ECECF4;" id="test"></div>
+        <div></div>
+        <div></div>
+    </body>
+</html>
